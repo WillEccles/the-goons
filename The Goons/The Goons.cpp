@@ -19,7 +19,8 @@ int main()
 	int choice = io.options(options);
 
 	cout << "You chose '" << options[choice - 1] << "'" << endl;
-	system("pause");
+	// this is also a comment
+    system("pause");
 
     return 0;
 }
