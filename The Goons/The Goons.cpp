@@ -12,8 +12,9 @@ iomanager io;
 
 int main()
 {
-	cout << "HERRO pls pick an optionnnnn" << endl;
-	vector<string> options = {"Hello", "World", "Hi"};
+	//this is a test 
+	cout << "Welcome to apeture science" << endl;
+	vector<string> options = {"allahu", "akbar", "jihad"};
 	int choice = io.options(options);
 
 	cout << "You chose '" << options[choice - 1] << "'" << endl;
