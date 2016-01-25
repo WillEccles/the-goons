@@ -12,7 +12,8 @@ iomanager io;
 
 int main()
 {
-	//this is a test 
+	// this is a test
+    // this is an interesting test you have done
 	cout << "Welcome to apeture science" << endl;
 	vector<string> options = {"allahu", "akbar", "jihad"};
 	int choice = io.options(options);
