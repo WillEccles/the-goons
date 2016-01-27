@@ -1,9 +1,16 @@
 #pragma once
 #include <string>
 #include <vector>
+
+using std::string;
+using std::vector;
+
 class iomanager
 {
 public:
-	int options(std::vector<std::string> options);
+	void clear();
+	void wait();
+	int options(vector<string> options);
+	void titleAndContent(string title, string content);
 };
 

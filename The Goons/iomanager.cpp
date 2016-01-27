@@ -5,8 +5,13 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <limits>
+#include <cstdio> // just in case I need to use printf or the like
 
 #include "textcolors.h"
+
+// see 'wait()', this must be fixed because of VS being stupid.
+#undef max
 
 using namespace std;
 
@@ -16,6 +21,32 @@ int color;
 
 void setColor(int colorCode) {
 	SetConsoleTextAttribute(console, colorCode);
+}
+
+// because this is better than using 'system("cls")'
+void iomanager::clear() {
+	COORD topLeft = { 0, 0 };
+	HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_SCREEN_BUFFER_INFO screen;
+	DWORD written;
+
+	GetConsoleScreenBufferInfo(console, &screen);
+	FillConsoleOutputCharacterA(
+		console, ' ', screen.dwSize.X * screen.dwSize.Y, topLeft, &written
+		);
+	FillConsoleOutputAttribute(
+		console, FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_BLUE,
+		screen.dwSize.X * screen.dwSize.Y, topLeft, &written
+		);
+	SetConsoleCursorPosition(console, topLeft);
+}
+
+void iomanager::wait() {
+	setColor(DARKWHITE);
+	cout << "Press ENTER to continue...";
+	// this is why i had to undef max, because windows defines it in some header file somewhere
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	setColor(WHITE);
 }
 
 /// show the user options and then return which one they choose
@@ -52,4 +83,16 @@ int iomanager::options(vector<string> options) {
 	setColor(WHITE);
 
 	return choice;
+}
+
+void iomanager::titleAndContent(string title, string content) {
+	// title
+	clear();
+	setColor(DARKWHITE);
+	cout << title << endl;
+	
+	// content
+	setColor(WHITE);
+	cout << content << endl;
+	
 }
