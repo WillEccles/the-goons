@@ -23,6 +23,9 @@ show_menu:
 	case 1:
 		break;
 	case 2:
+		cout << "If you havent figured it out already, you type a number that corresponds with your choice and then hit ENTER. ";
+		io.wait("\nPress ENTER to return to the main menu.");
+		goto show_menu;
 		break;
 	case 3:
 		io.titleAndContent("About 'The Goons'", "'The Goons' is a project that was created by Will Eccles and Jordan Duckstein for no reason other than that we like to have fun.");
