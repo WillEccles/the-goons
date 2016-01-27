@@ -43,7 +43,7 @@ void iomanager::clear() {
 
 void iomanager::wait() {
 	setColor(DARKWHITE);
-	cout << "Press ENTER to continue...";
+	cout << "\nPress ENTER to continue...";
 	// this is why i had to undef max, because windows defines it in some header file somewhere
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	setColor(WHITE);
@@ -51,7 +51,7 @@ void iomanager::wait() {
 
 void iomanager::wait(string message) {
 	setColor(DARKWHITE);
-	cout << message;
+	cout << "\n" << message;
 	// this is why i had to undef max, because windows defines it in some header file somewhere
 	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	setColor(WHITE);
