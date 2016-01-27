@@ -49,6 +49,14 @@ void iomanager::wait() {
 	setColor(WHITE);
 }
 
+void iomanager::wait(string message) {
+	setColor(DARKWHITE);
+	cout << message;
+	// this is why i had to undef max, because windows defines it in some header file somewhere
+	cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	setColor(WHITE);
+}
+
 /// show the user options and then return which one they choose
 int iomanager::options(vector<string> options) {
 	int number = 1;

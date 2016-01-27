@@ -16,7 +16,7 @@ int main()
 show_menu:
 	io.clear();
 	cout << "Welcome to The Goons" << endl;
-	vector<string> options = {"Play", "Instructions", "About"};
+	vector<string> options = {"Play", "Instructions", "About", "Quit"};
 	int choice = io.options(options);
 
 	switch (choice) {
@@ -26,12 +26,14 @@ show_menu:
 		break;
 	case 3:
 		io.titleAndContent("About 'The Goons'", "'The Goons' is a project that was created by Will Eccles and Jordan Duckstein for no reason other than that we like to have fun.");
-		io.wait();
+		io.wait("\nPress ENTER to return to the main menu.");
 		goto show_menu;
 		break;
+	case 4:
+		return 0;
 	}
 
-	system("pause");
+	io.wait();
 
     return 0;
 }
