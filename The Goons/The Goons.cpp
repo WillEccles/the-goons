@@ -23,7 +23,7 @@ show_menu:
 	case 1:
 		break;
 	case 2:
-		cout << "If you havent figured it out already, you type a number that corresponds with your choice and then hit ENTER. ";
+		io.titleAndContent("Instructions", "If you havent figured it out already, you type a number that corresponds with your choice and then hit ENTER. ");
 		io.wait("\nPress ENTER to return to the main menu.");
 		goto show_menu;
 		break;
