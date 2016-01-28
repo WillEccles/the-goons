@@ -29,7 +29,7 @@ show_menu:
 		break;
 	case 3:
 		io.titleAndContent("About 'The Goons'", "'The Goons' is a project that was created by Will Eccles and Jordan Duckstein for no reason other than that we like to have fun.");
-		io.wait("\nPress ENTER to return to the main menu.");
+		io.wait("Press ENTER to return to the main menu.");
 		goto show_menu;
 		break;
 	case 4:
