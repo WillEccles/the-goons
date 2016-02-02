@@ -24,7 +24,7 @@ show_menu:
 		break;
 	case 2:
 		io.titleAndContent("Instructions", "If you havent figured it out already, you type a number that corresponds with your choice and then hit ENTER. ");
-		io.wait("\nPress ENTER to return to the main menu.");
+		io.wait("Press ENTER to return to the main menu.");
 		goto show_menu;
 		break;
 	case 3:
